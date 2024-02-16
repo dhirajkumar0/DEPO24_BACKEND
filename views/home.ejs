@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="table" class="border border-secondary container-fluid">
+      <div id="header" class="row mt-4 pt-4">
+        <div id="brand-icon" class="col-3 p-2">
+          <img
+            class="img-fluid p-4"
+            src="https://cdn.shopify.com/s/files/1/0566/3182/0333/files/LOGO-color.png?v=1647674394"
+          />
+        </div>
+        <div id="brand-address" class="col-5 ps-4">
+          <strong>Depo Solutions Private Limited</strong>
+          <p>
+            77/1/A, Christopher Road, Topsia, <br />
+            Kolkata - 700046 <br />
+            West Bengal<br />
+            GSTIN: 19AAJCD1058P1Z4
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          id="proforma-invoice"
+          class="col text-end border-bottom border-secondary"
+        >
+          <h1>Proforma Invoice</h1>
+        </div>
+      </div>
+      <div id="estimate" class="row border-bottom border-secondary">
+        <div id="date" class="col border-end border-secondary">
+          <div class="row">
+            <div class="col">#</div>
+            <div class="col">
+              <strong>: DEPO/KOL/PI/000007</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">Estimate Date</div>
+            <div class="col">
+              <strong>: 30/01/2023</strong>
+            </div>
+          </div>
+        </div>
+        <div id="supply" class="col">
+          <div class="row">
+            <div class="col">Place Of Supply</div>
+            <div class="col">
+              <strong>:West Bengal(19)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="bill-to"
+        class="row border-bottom border-secondary"
+        style="background-color: #f2f3f4"
+      >
+        <div id="left" class="col border-end border-secondary">
+          <strong>Bill To</strong>
+        </div>
+        <div id="right" class="col"><strong>Ship To</strong></div>
+      </div>
+      <div id="address" class="row border-bottom border-secondary">
+        <div id="left-address" class="col border-end border-secondary">
+          <strong>Depo Solutions Private Limited</strong>
+          <p>
+            77/1/A, Christopher Road, Topsia, <br />
+            Kolkata - 700046 <br />
+            West Bengal<br />
+            GSTIN: 19AAJCD1058P1Z4
+          </p>
+        </div>
+        <div id="right-address" class="col">
+          Depo Solutions Private Limited
+          <p>
+            77/1/A, Christopher Road, Topsia, <br />
+            Kolkata - 700046 <br />
+            West Bengal<br />
+            GSTIN: 19AAJCD1058P1Z4
+          </p>
+        </div>
+      </div>
+      <div
+        id="map-head"
+        class="row border-bottom border-secondary text-end"
+        style="background-color: #f2f3f4"
+      >
+        <div id="hash" class="border-end border-secondary" style="width: 2rem">
+          <strong>#</strong>
+        </div>
+        <div id="item-description" class="col-2 border-end border-secondary">
+          <strong>Item & Description</strong>
+        </div>
+        <div id="hsn" class="col border-end border-secondary">
+          <strong>HSN/SAC</strong>
+        </div>
+        <div id="qty" class="col border-end border-secondary">
+          <strong>Qty</strong>
+        </div>
+        <div id="rate" class="col border-end border-secondary">
+          <strong>Rate</strong>
+        </div>
+        <div id="discount" class="col border-end border-secondary">
+          <strong>Discount</strong>
+        </div>
+        <div id="cgst" class="col border-end border-secondary">
+          <div class="row">
+            <div class="col text-center border-bottom border-secondary">
+              <strong>CGST</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col border-end border-secondary text-end">
+              <strong>%</strong>
+            </div>
+            <div class="col text-end"><strong>Amt</strong></div>
+          </div>
+        </div>
+        <div id="sgst" class="col border-end border-secondary">
+          <div class="row">
+            <div class="col text-center border-bottom border-secondary">
+              <strong>SGST</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col border-end border-secondary text-end">
+              <strong>%</strong>
+            </div>
+            <div class="col text-end"><strong>Amt</strong></div>
+          </div>
+        </div>
+        <div id="amt" class="col"><strong>Amount</strong></div>
+      </div>
+      <% for (var i = 0; i < data.length; i++) { %> <% let amount = parseInt(
+      (data[i].mrp * data[i].quantity * (data[i] / 100))); %> <% let gst =
+      parseInt((amount * (data[i].gst / 100))); %> <% let sub_total = 0; %> <%
+      %> <% %>
+      <div
+        id="array-to-be-mapped"
+        class="row border-bottom border-secondary text-end"
+      >
+        <div
+          id="serial"
+          class="border-end border-secondary"
+          style="width: 2rem"
+        >
+          <%= i+1 %>
+        </div>
+        <div id="item-description" class="col-2 border-end border-secondary">
+          <%= data[i].name %>
+        </div>
+        <div id="hsn" class="col border-end border-secondary">
+          <%= data[i].hsn %>
+        </div>
+        <div id="qty" class="col border-end border-secondary">
+          <%= data[i].quantity %>
+        </div>
+        <div id="rate" class="col border-end border-secondary">
+          <%= data[i].mrp %>
+        </div>
+        <div id="discount" class="col border-end border-secondary">
+          <%= data[i].discount %> %
+        </div>
+        <div class="col border-end border-secondary">
+          <div class="d-flex" style="height: 100%">
+            <div id="percent" class="col border-end border-secondary text-end">
+              9%
+            </div>
+            <div id="amyt" class="col text-end"><%= (data[i].gst)/2 %></div>
+          </div>
+        </div>
+
+        <div class="col border-end border-secondary">
+          <div class="d-flex" style="height: 100%">
+            <div id="percent" class="col border-end border-secondary text-end">
+              9%
+            </div>
+            <div id="amyt" class="col text-end"><%= (data[i].gst)/2 %></div>
+          </div>
+        </div>
+
+        <div id="amt" class="col"><%= data[i].amount %></div>
+      </div>
+      <%}%>
+
+      <div id="rs-in-words" class="row">
+        <div id="total-words" class="col border-end border-secondary">
+          Total In Words<br />
+          <span><strong><%= data[0].words %> only</strong></span>
+        </div>
+        <div id="right-totalwords" class="col border-bottom border-secondary">
+          <div class="row">
+            <div id="sub-total" class="col text-end">
+              Sub Total<br />
+              CGST9 (9%)<br />
+              SGST9 (9%)<br />
+              <strong>Total</strong><br />
+            </div>
+            <div id="price" class="col text-end">
+              <%= data[0].subtotal %><br />
+              <%= (data[0].totalGst)/2 %><br />
+              <%= (data[0].totalGst)/2 %><br />
+              <strong
+                >&#8377;<%= (data[0].totalGst + data[0].subtotal ) %></strong
+              ><br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="looking forward-sifnature" class="row">
+        <div id="left" class="col border-end border-secondary">
+          <p>Looking forward for your business.</p>
+        </div>
+        <div id="signature" class="col border-bottom border-secondary">
+          <div class="row">
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
+          <div class="row text-center">
+            <div class="col">Authorised Signature</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
